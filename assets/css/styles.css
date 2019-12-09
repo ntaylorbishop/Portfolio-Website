@@ -6,6 +6,11 @@
  * License: Creative Commons Attribution 3.0 License
  * Website: https://themes.3rdwavemedia.com/
 */
+
+html {
+  overflow-y:scroll;
+}
+
 body {
   font-family: 'Lato', arial, sans-serif;
   color: #434343;
@@ -665,4 +670,9 @@ a.dotted-link:hover {
     width: 1360px;
     max-width: inherit;
   }
+}
+
+/* Custom */
+#fillContainer {
+  min-height: 1000px;
 }
