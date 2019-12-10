@@ -1,0 +1,23 @@
+{
+  "name": "portfolio-website",
+  "version": "1.0.0",
+  "description": "Portfolio Website for myself",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ntaylorbishop/Portfolio-Website.git"
+  },
+  "author": "Taylor Bishop",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ntaylorbishop/Portfolio-Website/issues"
+  },
+  "homepage": "https://github.com/ntaylorbishop/Portfolio-Website#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-file-include": "^2.1.1"
+  }
+}
