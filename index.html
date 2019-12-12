@@ -231,6 +231,16 @@
                 <hr class="divider" />
 
                 <div class="item row">
+                    <a class="col-md-4 col-12" href="https://store.steampowered.com/app/612590/Mouse_Playhouse/">
+                        <img class="img-fluid project-image" src="assets/images/projects/MousePlayhouse.jpg" alt="project name" />
+                    </a>
+                    <div class="desc col-md-8 col-12">
+                        <h3 class="title"><a href="https://store.steampowered.com/app/612590/Mouse_Playhouse/">Mouse Playhouse</a></h3>
+                        <p class="mb-2">Mouse Playhouse is a virtual reality video game lauded as the Guildhall at SMU's best senior design team project to date. Mouse Playhouse won 2nd place in the Intel University Games Showcase, as well as getting our development team hired by Gearbox Software.</p>
+                    </div>                        
+                </div>
+
+                <!-- <div class="item row">
                     <a class="col-md-4 col-12 projectLink" href="#!" data-projectSectionName="project_MousePlayhouse">
                         <img class="img-fluid project-image" src="assets/images/projects/MousePlayhouse.jpg" alt="project name" />
                     </a>
@@ -238,7 +248,7 @@
                         <h3 class="title"><a class="projectLink" href="#!" data-projectSectionName="project_MousePlayhouse">Mouse Playhouse</a></h3>
                         <p class="mb-2">Mouse Playhouse is a virtual reality video game lauded as the Guildhall at SMU's best senior design team project to date. Mouse Playhouse won 2nd place in the Intel University Games Showcase, as well as getting our development team hired by Gearbox Software.</p>
                     </div>                        
-                </div>
+                </div> -->
 
                 <hr class="divider" />
 
@@ -274,9 +284,43 @@
     <div class="primary col-lg-12">
         <section class="about section">
             <div class="section-inner">
-                <h2 class="heading">Master's Thesis</h2>
+                <center><h2 class="heading">Master's Thesis: An Exploration on Rendering Pipelines</h2></center>
                 <div class="content">
-                    <p>This is the Master's Thesis project page.</p>
+                    <div style='position:relative; padding-bottom:calc(56.25% + 44px)'>
+                        <iframe src='https://gfycat.com/ifr/CornyWarmheartedBarbet' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0;' allowfullscreen></iframe>
+                    </div>
+                    <br/>
+                    <h3>Summary</h3>
+                    <ul>
+                        <li><a href="https://github.com/ntaylorbishop/Masters-Thesis">Link to project GitHub repo</a></li>
+                        <li>Artifact for Master's Thesis at SMU Guildhall</li>
+                        <li>Goal: Implement a variety of industry-standard rendering techniques and implement a pipeline for them in my C++ rendering engine with OpenGL 4.5
+                        <li>Forward+ tiled light culling with point lights</li>
+                        <li>Omnidirectional shadow mapping</li>
+                        <li>​Screen-space ambient occlusion</li>
+                        <li>Order-independent transparency</li>
+                        <li>High Dynamic Range (HDR​)</li>
+                        <li>Real-time reflections</li>
+                    </ul>
+                    <h3>Tiled Forward+ Rendering</h3>
+                    <ol>
+                        <li>The tiled forward renderer consists of the following steps:</li>
+                        <li>Light culling compute shader pass</li>
+                        <li>Pre-depth pass for opaque geometry occlusion</li>
+                        <li>Opaque geometry render pass</li>
+                        <li>Translucent geometry render pass</li>
+                    </ol>
+                    <p>At the beginning of the render step for each frame, a compute shader is run that cuts the screen up into a discrete number of tiles, back-computes camera frustums for each tile, then runs intersection tests on each light in the scene and collects those light's indices into a buffer for each corresponding tile. The tiles are computed in 16x16 pixel groups, to take advantage of GPU architecture. Pixels share memory pools with neighboring pixel in small groups, typically in collections of 8x8 or 16x16 pixels.</p>
+                    <img class="img-fluid inProjectImg" src="assets/images/projects/thesis/mt1.png" />
+                    <p class="text-center font-weight-light" >The compute pass carves the screen up into tiles, finds which lights intersect with which tiles, and places them into an index buffer for each tile.</p>
+                    <p>During the base lighting pass, each fragment invocation determines which tile it belongs to, then goes through the index buffer and considers only the lights for that tile. In a traditional forward pipeline, each fragment rendered (even if not within view of the camera) would need to go through each light in the light list and consider it for shading. By tiling the camera frustum, we dramatically reduce the amount of lighting calculations that must be done per fragment.</p>
+                    <div style='position:relative; padding-bottom:calc(56.25% + 44px)'>
+                        <iframe src='https://gfycat.com/ifr/EvenBlueAdmiralbutterfly' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0;' allowfullscreen></iframe>
+                    </div>
+                    <p class="text-center font-weight-light">The artifact can support up to 4096 lights at 60 FPS on a mid-to-high range gaming laptop.</p>
+                
+                    <h3>Profiling Results</h3>
+                    <p>The artifact was profiled with a traditional forward pipeline, the implemented tiled forward approach, with and without a pre-depth pass, and light sizes of 1-2 meters and 3-6 meters. The two most relevant results are pictured below, to demonstrate the massive decrease in rendering times with a forward+ pipeline.</p>
                 </div>
             </div>                
         </section>
