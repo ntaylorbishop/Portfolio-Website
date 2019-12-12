@@ -28,7 +28,12 @@
     <!-- Theme CSS -->  
     <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
 
-    
+    <!-- Javascript -->          
+    <script type="text/javascript" src="assets/plugins/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/popper.min.js"></script> 
+    <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>    
+    <script type="text/javascript" src="assets/plugins/jquery-rss/dist/jquery.rss.min.js"></script> 
+    <script type="text/javascript" src="assets/js/main.js"></script>    
 </head> 
 
 <body>
@@ -95,47 +100,11 @@
 
         @@include('aboutMeSection.html')
     
-        <div class="row" id="projects">
-            <div class="primary col-lg-12">
-                <section class="about section">
-                    <div class="section-inner">
-                        <div class="item row">
-                            <a class="col-md-4 col-12" href="#" target="_blank">
-                                <img class="img-fluid project-image" src="assets/images/projects/PennTellerVR.jpg" alt="Penn & Teller VR" />
-                            </a>
-                            <div class="desc col-md-8 col-12">
-                                <h3 class="title"><a href="#" target="_blank">Penn & Teller VR</a></h3>
-                                <p class="mb-2">Penn & Teller VR is a virtual reality game built for HTC Vive, Oculus Rift, and Playstation VR. </p>
-                            </div>                        
-                        </div>
+        @@include('projectsSection.html')
 
-                        <hr class="divider" />
-
-                        <div class="item row">
-                            <a class="col-md-4 col-12" href="#" target="_blank">
-                                <img class="img-fluid project-image" src="assets/images/projects/mastersthesis.jpg" alt="Master's Thesis" />
-                            </a>
-                            <div class="desc col-md-8 col-12">
-                                <h3 class="title"><a href="#" target="_blank">Master's Thesis: An Exploration in Rendering Pipelines</a></h3>
-                                <p class="mb-2">A 3D rendering engine developed from scratch in C++ using OpenGL 4.5, this thesis was an exploration on modern day rendering techniques. Using the classic Sponza scene for the demonstration, this thesis features many modern-day rendering techniques: Tiled Forward+ rendering, omni-directional shadowmapping, screen-space ambient occlusion, as well as a few others.</p>
-                            </div>                        
-                        </div>
-
-                        <hr class="divider" />
-
-                        <div class="item row">
-                            <a class="col-md-4 col-12" href="#" target="_blank">
-                                <img class="img-fluid project-image" src="assets/images/projects/MousePlayhouse.jpg" alt="project name" />
-                            </a>
-                            <div class="desc col-md-8 col-12">
-                                <h3 class="title"><a href="#" target="_blank">Mouse Playhouse</a></h3>
-                                <p class="mb-2">Mouse Playhouse is a virtual reality video game lauded as the Guildhall at SMU's best senior design team project to date. Mouse Playhouse won 2nd place in the Intel University Games Showcase, as well as getting our development team hired by Gearbox Software.</p>
-                            </div>                        
-                        </div>
-                    </div>                
-                </section>
-            </div>
-        </div>
+        <!--INDIVIDUAL PROJECT PAGES -->
+        @@include('project_mousePlayhouse.html')
+        @@include('project_MastersThesis.html')
 
         <!-- INDIVIDUAL PROJECT PAGES -->
         <!-- <div class="row" id="project-MastersThesis">
@@ -157,19 +126,7 @@
                 <small class="copyright">Designed with <i class="fas fa-heart"></i> by <a href="https://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a> for developers</small>
         </div>
     </footer> -->
- 
-    <!-- Javascript -->          
-    <script type="text/javascript" src="assets/plugins/jquery-3.4.1.min.js"></script>
-    <script type="text/javascript" src="assets/plugins/popper.min.js"></script> 
-    <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>    
-    <script type="text/javascript" src="assets/plugins/jquery-rss/dist/jquery.rss.min.js"></script> 
-    <!-- github calendar plugin -->
-    <!-- <script type="text/javascript" src="assets/plugins/github-calendar/dist/github-calendar.min.js"></script> -->
-    <!-- github activity plugin -->
-    <!-- <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.min.js"></script> -->
-    <!-- <script type="text/javascript" src="assets/plugins/github-activity/github-activity-0.1.5.min.js"></script> -->
-    <!-- custom js -->
-    <script type="text/javascript" src="assets/js/main.js"></script>            
+        
 </body>
 </html> 
 

@@ -3,6 +3,7 @@ var scrollSpeed = 250;
 
 var fillContainer;
 var currPage;
+var projectPages;
 
 $(window).on('load', function() {
 
@@ -14,6 +15,10 @@ jQuery(document).ready(function($) {
     var projectsSection = $('#projects');
     currPage = aboutMeSection;
     fillContainer = $('#fillContainer');
+    projectPages = $('.projectPage');
+
+    CollectProjectLinksAndAttachClickHandlers();
+    HideAllProjectPages();
 
     projectsSection.hide();
     fillContainer.hide();
@@ -26,6 +31,23 @@ jQuery(document).ready(function($) {
         ShowNewPage(projectsSection);
     });
 });
+
+function HideAllProjectPages() {
+    projectPages.each(function(index) {
+        $(this).hide();
+    });
+}
+
+function CollectProjectLinksAndAttachClickHandlers() {
+    var projectLinks = $(".projectLink");
+
+    projectLinks.each(function(index) {
+        $(this).on("click", function() {
+            var projectLinkId = "#" + $(this).data("projectsectionname");
+            ShowNewPage($(projectLinkId));
+        });
+    });
+}
 
 function ShowNewPage(section) {
     var newFillContainerHeight = fillContainer.height();
