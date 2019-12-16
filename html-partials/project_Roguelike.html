@@ -2,9 +2,53 @@
     <div class="primary col-lg-12">
         <section class="about section">
             <div class="section-inner">
-                <h2 class="heading">Data-Driven Roguelike</h2>
+                <center><h2 class="heading">Data-Driven Roguelike</h2></center>
                 <div class="content">
-                    <p>This is the Mouse Playhouse project page.</p>
+                    <div style='position:relative; padding-bottom:calc(56.25% + 44px)'>
+                        <iframe src='https://gfycat.com/ifr/WeakAcceptableFlee' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0;' allowfullscreen></iframe>
+                    </div>
+                    
+                    <h3>Summary</h3>
+                    <p>Roguelikes are one of the oldest genres of RPGs - procedurally generated dungeon crawlers with a few key features:</p>
+                    <ul>
+                        <li>Permadeath (If you die, the game is over and you must restart)</li>
+                        <li>Ability to save you current game and continue when the application is reloaded</li>
+                        <li>Enemy NPCs that can be interacted with, and possibly friendly NPCs</li>
+                        <li>Items scattered across the map that can be picked up and used</li>
+                        <li>​8 points of movement, turn-based gameplay</li>
+                    </ul>
+
+                    <h3>Agent Behaviors</h3>
+                    <p>NPCs can be defined with three different behaviors:</p>
+                    <ul>
+                        <li>Melee Attack Player or Enemy NPC</li>
+                        <li>Chase Player or Enemy NPC</li>
+                        <li>Flee from Player or Enemy NPC</li>
+                    </ul>
+                    <p>NPCs can also be given movement properties that modify the hueristics in their A* pathfinding, stating whether they can move through solid tiles ("flying" movement), Lava, and whether they're blocked by other Agents (the player or other NPCs).</p>
+                    <center><img class="img-fluid inProjectImg" src="assets/images/projects/paradise/p1.png" /></center>
+                    <p class="text-center font-weight-light" >Data-driving NPC behaviors and properties</p>
+                    <p>A permissive line of sight algorithm is used for both the player and the NPCs using digital bressenham lines spanning out for each agent. NPCs derive utility of their behaviors based on the distance of enemy agents, how low their current health is, and how close they are to certain features in the map.</p>
+                    <p>NPCs can also be defined with various faction relationships, so if a goblin sees the player and another enemy faction, but hates the enemy faction more, it will go after the enemy faction instead of the player. They may also see items on the map and pick them up.</p>
+
+                    <h3>NPC Factions</h3>
+​                    <p>NPCs can belong to XML-defined factions. Factions have relationships, resulting in NPC in-fighting when they see other NPCs belonging to a "Hated" or "Disliked" faction. If an NPC likes a faction but someone belonging to that faction attacks it, it will note the attack and become hostile to that faction. </p>
+                    <img class="img-fluid inProjectImg" src="assets/images/projects/paradise/p2.png" />
+                    <p class="text-center font-weight-light" >The player attacks a Hobgoblin while other NPCs flee enemies in the distance.</p>
+
+                    <h3>Data-Driven Design</h3>
+                    <p>Entirely new in-game scenarios can be built from the ground up in a relatively short amount of time and touching only the necessary portions of the code. New generators, which must be defined code-side, are self-registering and only require using a template generator class to add themselves into the list of generators.</p>
+                    <img class="img-fluid inProjectImg" src="assets/images/projects/paradise/p3.png" />
+                    <p class="text-center font-weight-light" >Storm the Castle - A scenario with a custom castle map and custom NPC behaviors, built in a little under 5 hours</p>
+                    <p>The XML parsing portion of my engine uses a free third party tool called XMLParser, with additional functionality built in to make design as painless as possible. This means that things such as colors can be defined in multiple ways, attribute and node data capitalization doesn't matter, and ordering of nodes is not taken into account.</p>
+
+                    <h3>Taking it Two Steps Further</h3>
+                    <p>The basic requirements for the project were deep dives into agent behaviors, XML-driven gameplay and design, and a handful of interesting map generators, all controlled through keyboard input.</p>
+                    <p>There was something desperately lacking from example projects of prior students and I was determined to make mine more interesting and playable. The two things that I thought would really elevate the experience were mouse interaction and dynamic tile graphics. Debugging the A* pathing was a breeze because I could visually see the path being drawn where my mouse was located. Being able to mouse over enemies to see data about them felt good and really brought life to the game.</p>
+                    <p>Looking back, design-wise, the inventory system may not have been the best idea due to the ASCII nature of the visual interface - you may pick up five different swords that all look the same and can't tell the difference unless you mouse over them.</p>
+                    <p>Taking these extra steps really elevated the entire experience and resulted in a more well-crafted adventure. Mouse-based inventory management also felt better and made the game feel more dynamic.</p>
+                    <img class="img-fluid inProjectImg" src="assets/images/projects/paradise/p4.gif" />
+                    <p class="text-center font-weight-light" >Mouse interaction and dynamic tile animations</p>
                 </div>
             </div>                
         </section>

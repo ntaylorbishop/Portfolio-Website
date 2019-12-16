@@ -54,7 +54,7 @@
         </div>
     </header>
 
-    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -558,7 +558,49 @@
                     <img class="img-fluid inProjectImg" src="assets/images/projects/velocirapture/v4.png" />
                     <p class="text-center font-weight-light" >Working With UMG Animations</p>
                     <p>Events were fired from the Game Mode blueprint that pickups were grabbed, so the HUD element didn't have to poll for changes. This ensured that the HUD remained responsive and only encapsulated functionality to play the animations.</p>
+
                     <h3>Ragdolling</h3>
+                    <div style='position:relative; padding-bottom:calc(56.21% + 44px)'>
+                        <iframe src='https://gfycat.com/ifr/RichShrillArchaeocete' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0;' allowfullscreen></iframe>
+                    </div><p>
+                    <div style='position:relative; padding-bottom:calc(56.21% + 44px)'>
+                        <iframe src='https://gfycat.com/ifr/PlainHastyHagfish' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0;' allowfullscreen></iframe>
+                    </div>
+                    <br/>
+                    <p>To get the ragdoll to react appropriately, it needed an impulse applied to the last point of contact with the bullet. When a player dies, a <b>Ragdoll character</b> is spawned. The bullet impact velocity and the name of the bone hit are then sent to it. After construction, it applies the impact velocity as an impulse on the bone hit.</p>
+                    <img class="img-fluid inProjectImg" src="assets/images/projects/velocirapture/v5.png" />
+                    <p class="text-center font-weight-light" >Applying impulse to impact bone on player death</p>
+
+                    <h3>Post Mortem</h3>
+                    <br/>
+                    <h4>What Went Well</h4>
+                    <ul>
+                        <li>We succeeded in having good communication channels</li>
+                        <li>The final product is very cohesive</li>
+                        <li>Team wasn’t afraid of interdisciplinary work</li>
+                        <li>Team grew their skills, even in areas that weren’t our specialty</li>
+                        <li>Design and programming maintained clear communication channels</li>
+                        <li>Team was well-organized</li>
+                        <li>We recovered from losing a team member well - especially the programmers</li>
+                        <li>We maintained a positive working environment</li>
+                    </ul>
+                    <h4>What Went Wrong</h4>
+                    <ul>
+                        <li>Cohesive vision is necessary early on</li>
+                        <li>Need more bug testing and play testing - focused too much on things we were currently</li>
+                        <li>working on, instead of testing implemented features for balance and completeness</li>
+                        <li>Some tasks overran their bounds, and team members got tunnel vision</li>
+                        <li>At the beginning, there was too much talk about design, and not enough experimenting</li>
+                        <li>All team members should have worked on getting assets into the game sooner, then iterate - rather than trying to make the first pass the best</li>
+                    </ul>
+                    <h4>What We Learned</h4>
+                    <ul>
+                        <li>Improved time estimates across the team over project</li>
+                        <li>Iteration is not only good, it’s necessary - get it working, then get it pretty</li>
+                        <li>Prove your pipelines as early as possible</li>
+                        <li>Experimentation is valuable - especially at the beginning</li>
+                        <li>Don’t get too attached to your work - Cut features if it makes sense for the game</li>
+                    </ul>
                 </div>
             </div>                
         </section>
@@ -568,11 +610,64 @@
     <div class="primary col-lg-12">
         <section class="about section">
             <div class="section-inner">
-                <h2 class="heading">Doctor's Note</h2>
+                <center><h2 class="heading">Doctor's Note</h2></center>
                 <div class="content">
-                    <p>This is the Mouse Playhouse project page.</p>
+                    <center><iframe width="950" height="565" src="https://www.youtube.com/embed/fMiTBRij0Ec" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center
+                    
+                    <h3>Summary</h3>
+                    <ul>
+                        <li>A mobile puzzle game built in Unity3D for Android mobile platforms</li>
+                        <li>Served as Lead Developer on a team of 4 (2 programmers)</li>
+                        <li>Responsibilities included: Managed team tasks and pipelines, implemented basic puzzle mechanics, puzzle sequencing, and end-game sequencing</li>
+                    </ul>
+
+                    <h3>Base Puzzle Mechanics</h3>
+                    <center><img class="img-fluid inProjectImg" src="assets/images/projects/doctorsnote/dn1.png" /></center>
+                    <p class="text-center font-weight-light" >The base mechanism for placing gears on pegs and spark effects</p>
+                    <p>Interaction is done with the Unity3D event trigger system. This ensures that interaction is cross-platform with no additional overhead.</p>
+                    <p>There are a set number of gears in the game that pan into view when a level is completed, and each is given its own event triggers for dragging, picking up, and putting down.</p>
+                    <p>The gear objects hold functionality for transferring rotation between nearby gears - It loops through the ~20 gears in the game, checks the distance between them, and if they're close enough initiates rotation and tells them to check for additional nearby gears. This allows a chain-reaction of sorts when gears are put in place.</p>
+                    <center><img class="img-fluid inProjectImg" src="assets/images/projects/doctorsnote/dn2.png" /></center>
+                    <p class="text-center font-weight-light" >Creating the sliding pipe mechanism</p>
+                    <p>The original prototype for the third level sliding pipe was built by asking whether there was a gear close enough to the pipe and sliding the pipe in a hard-coded direction.</p>
+                    <p>During vertical slice, we implemented a line-normal detection algorithm that takes an angle and detects the closest gear's distance to its own line segment to see if it was "touching" the teeth or not.</p>
+                    <center><img class="img-fluid inProjectImg" src="assets/images/projects/doctorsnote/dn3.png" /></center>
+                    <p class="text-center font-weight-light" >The on / off peg mechanism</p>
+                    <p>The fourth and fifth puzzles use a simple on / off peg mechanism that turns on an attached peg if a rotating pipe is in the right place. Pegs marked as "on / off" pegs check to see if they're associated pipe is at the right angle, and if it is, powers the associated regular peg.</p>
+                    <p>To sell the idea of “turning on” a peg with the power box, a simple procedural lightning particle effect was implemented along with switching the sprites of the power box.</p>
+
+                    <h3>Puzzle Sequencing</h3>
+                    <img class="img-fluid inProjectImg" src="assets/images/projects/doctorsnote/dn4.png" />
+                    <p class="text-center font-weight-light" >Creating the puzzle-to-puzzle animation sequence</p>
+                    <p>While we originally went with the idea of having various notes laid out in the background of the main game scene so that players got an idea for the general story of Doctor’s Note, it quickly came to our attention that players were not noticing the notes at all. To fix this problem, I designed and implemented a level completion animation that would fade in a theoretical shopping list to juxtapose the dark tone of the game with the “madness” of the mad scientist.</p>
+                    <p>This shopping list would fade in after the user completed a puzzle, and an animation kicked off that when finished, the player would have to hit the continue button to move to the next puzzle.</p>
+                    <img class="img-fluid inProjectImg" src="assets/images/projects/doctorsnote/dn5.png" />
+                    <p class="text-center font-weight-light" >Creating the end-game sequence</p>
+                    <p>Once development kicked off and we had our core mechanics fleshed out, we needed a way for the player to feel like they were actually building something. The designer and I came up with a scheme such that certain mechanical sounds would come to life and others would fade out while background environment pieces would begin moving as the camera panned over to the next puzzle in the game.</p>
+                    <p>For our vertical slice milestone, I set out and created the level progression sequencing and connected the artist’s animations to create a more organic progression between puzzles. This also included loading sequences from the main menu UI to the main game scene, and from the UI to the credits sequence shown above.</p>
+
+                    <h3>Post Mortem</h3>
+                    <h4>What Went Well</h4>
+                    <ul>
+                        <li>Communicated effectively with team members about desires for the game
+                        Worked well the other programmer to get things done and have both of us firing on all pistons</li>
+                        Meted out tasks effectively and kept everyone focused on the tasks that needed to be accomplished</li>
+                    </ul>
+
+                    <h4>What Went Wrong</h4>
+                    <ul>
+                        <li>Could have handled the programming workflow with the other programmer at the beginning of the project instead of half-way through</li>
+                        <li>Could have been more effective in holding people accountable for the quality of work they were giving me for submission</li>
+                        <li>Workflow between all four team members could have been handled more efficiently and elegantly</li>
+                    </ul>
+                    <h4>What I Learned</h4>
+                    <ul>
+                        <li>People have different desires for what they want out of the project and socially, and tapping into those makes them more effective developers</li>
+                        <li>Do not be afraid to dive into an unfamiliar codebase and mangle it to your needs</li>
+                        <li>Game development workflow is not a simple problem space, and how to efficiently handle it is a hard problem</li>
+                    </ul>
                 </div>
-            </div>                
+            </div>
         </section>
     </div>
 </div>
@@ -580,9 +675,61 @@
     <div class="primary col-lg-12">
         <section class="about section">
             <div class="section-inner">
-                <h2 class="heading">Minecraft Clone</h2>
+                <center><h2 class="heading">Minecraft Clone</h2></center>
                 <div class="content">
-                    <p>This is the Mouse Playhouse project page.</p>
+                    <div style='position:relative; padding-bottom:calc(56.25% + 44px)'>
+                        <iframe src='https://gfycat.com/ifr/GreedyThoughtfulChafer' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0;' allowfullscreen></iframe>
+                    </div>
+                    <br/>
+
+                    <h3>Features & Summary</h3>
+                    <ul>
+                        <li>Infinite, persistent world</li>
+                        <li>Perlin noise generated terrain and biomes</li>
+                        <li>Multi-threaded chunk management​​</li>
+                        <li>Rain and snow effects</li>
+                        <li>Flood fill lighting algorithm</li>
+                        <li>Physics and Audio</li>
+                    </ul>
+
+                    ​<h3>Infinite, Persistent World</h3>
+                    <div style='position:relative; padding-bottom:calc(56.25% + 44px)'>
+                        <iframe src='https://gfycat.com/ifr/KeenMilkyBumblebee' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0;' allowfullscreen></iframe>
+                    </div>
+                    <p class="text-center font-weight-light">Chunks stream in and out as you move across the landscape</p>
+                    <p>The world is broken into "chunks" - 16x16x128 block groups that stream in and out as the player moves around. At all times, the game manages these chunks in a radius around the player. When the player moves, chunks that are flushed from memory are written out to disk - this ensures that when the player comes back, anything that they built still stays around.</p>
+                    <p>Chunks are generated with their heights calculated through a seeded 2D perlin noise function - a randomized, deterministic algorithm that ensures smooth gradients across the world plane. </p>
+
+                    <h3>Biomes</h3>
+                    <p>A separately seeded 2D perlin noise function is used to determine world biomes. These perlin grids are used as temperature and humidity in combination with column height. The base perlin noise function returns values between -1 and 1, so we use 0 as our determining factor on "hot", "cold", "wet", and "dry".</p>
+                    <p>Water and ice are determined by column heights being less than an arbitrarily defined "sea level".</p>
+                    <center><img class="img-fluid inProjectImg" src="assets/images/projects/simpleminer/sm1.png" /></center>
+                    <p class="text-center font-weight-light" >Determining column biomes</p>
+
+                    <h3>Rain and Snow Effects</h3>
+                    <div style='position:relative; padding-bottom:calc(56.25% + 44px)'>
+                        <iframe src='https://gfycat.com/ifr/SingleLimpJellyfish' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0;' allowfullscreen></iframe>
+                    </div>
+                    <p class="text-center font-weight-light">Snow on top of a mountain</p>
+                    <p>If a column is marked as MOUNTAIN (It's column height exceeds a certain threshold), snow spawns in that column. If a column is marked as PLAINS (It has high humidity and temperature), rain spawns in that column.</p>
+                    <p>For each column marked as snow or rain, 4 weather "sheets" (2D oriented quads) spawn and move downwards toward the ground. Each frame, the weather sheet checks to see if it's bottom is intersecting a block, and moves back up to the top of the column.</p>
+                    <p>Clouds (3D axis-aligned rectangular prisms) are spawned randomly above snow and rain columns and move horizontally across the terrain.</p>
+
+                    <h3>Lighting</h3>
+                    <div style='position:relative; padding-bottom:calc(56.25% + 44px)'>
+                        <iframe src='https://gfycat.com/ifr/SecondhandExcitableAmethystinepython' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0;' allowfullscreen></iframe>
+                    </div>
+                    <p class="text-center font-weight-light">Block faces get darker the further down you dig</p>
+                    <p>Light propagates using internal, arbitrarily defined light values of blocks that light the faces of surrounding blocks. Every block starts with an internal light value of 1, so that if no light is coming into a concealed area, it will still remain partially visible.</p>
+                    <p>When a chunk is first generated, the terrain generator descends each column and marks each air tile as sky. It then reiterates through each column, checks surrounding horizontal neighbors, and "dirties" them if they're not air tiles. Each frame, the algorithm goes through all blocks that need their lighting recalculated and adjusts their internal lighting values to correspond correctly to their neighbors.</p>
+                    <p>Blocks only need their lighting recalculated when neighboring blocks are added or removed, ensuring that lighting is not calculated unless it needs to be.</p>
+
+                    <h3>Future Features / Nice to Haves</h3>
+                    <ul>
+                        <li>Orient weather sheets around the player instead of in the columns - more natural look than having rain next to snow</li>
+                        <li>Inventory management / "collecting" blocks</li>
+                        <li>More refined / natural-feeling physics reactions</li>
+                    </ul>
                 </div>
             </div>                
         </section>
@@ -592,9 +739,47 @@
     <div class="primary col-lg-12">
         <section class="about section">
             <div class="section-inner">
-                <h2 class="heading">Multiplayer Top-Down Shooter</h2>
+                <center><h2 class="heading">Multiplayer Top-Down Shooter</h2></center>
                 <div class="content">
-                    <p>This is the Mouse Playhouse project page.</p>
+                    <center><iframe width="950" height="565" src="https://www.youtube.com/embed/JyF1jpT_35s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+                    <h3>Summary & Features</h3>
+                    <ul>
+                        ​<li>Five levels, two bosses with at least 5 minutes of changing gameplay</li>
+                        <li>Focus on optimization</li>
+                        <li>2D sprite rendering pipeline on top of custom OpenGL wrapper</li>
+                        <li>Profiling tools: memory allocations, code block execution times, and multi-threaded logging system</li>
+                        <li>4-Person Drop-In Drop-Out Multiplayer</li>
+                    </ul>
+                    <h3>Profiling Tools</h3>
+                    <div style='position:relative; padding-bottom:calc(56.25% + 44px)'>
+                        <iframe src='https://gfycat.com/ifr/UnlawfulFarflungAmazontreeboa' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0;' allowfullscreen></iframe>
+                    </div>
+                    <p class="text-center font-weight-light">The memory allocation profiler. Includes callstacks for each memory leak on program exit</p>
+                    <p>The profiling tools include three separate components:​</p>
+                    <ul>
+                        <li>Memory Allocation Profiler</li>
+                        <li>Frame Time and Function Profiler</li>
+                        <li>Logger</li>
+                    </ul>
+                    <p>The memory allocation profiler was constructed by overloading the new() and delete() operators to push metadata at the head of any allocated buffer.</p>
+                    <p>When new() is called and memory profiling output is set to verbose, the memory manager fetches the current callstack of the program and saves it at the beginning of the buffer as well as the rest of the metadata.</p>
+                    <center><img class="img-fluid inProjectImg" src="assets/images/projects/chromatica/c1.png" /></center>
+                    <p class="text-center font-weight-light" >Allocated memory buffers called with overloaded new()</p>
+                    <p>The metadata for the allocated memory buffer also contains a circular linked list to other memory allocations. This allows for a compact list of all metadata information, with the Memory Manager class only holding a pointer to the start of the linked list.</p>
+                    <img class="img-fluid inProjectImg" src="assets/images/projects/chromatica/c2.png" />
+                    <p class="text-center font-weight-light" >The memory manager metadata circular linked list</p>
+                    <p>The circular linked list was the fastest and most compact data structure to hold the collection of allocation metadata, since only the head of the list has to be stored on the memory manager and insertion is done in constant time.</p>
+
+                    <h3>Multiplayer</h3>
+                    <div style='position:relative; padding-bottom:calc(56.25% + 44px)'>
+                        <iframe src='https://gfycat.com/ifr/WelllitImpassionedDorado' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0;' allowfullscreen></iframe>
+                    </div>
+                    <p class="text-center font-weight-light" >4 players fighting the first boss</p>
+                    <p>The game features 4-person drop-in drop-out multiplayer. When an Xbox Controller is plugged in while the game is running, the player is added into the game. Players play cooperatively while also competing for the highest score, which is displayed when all players have died.</p>
+
+                    <h3>Future Features / Nice to Haves</h3>
+                    <p>The collection of entities (Enemies, players, bullets, and particles) should be compact in memory and cache warm at all times since they are looped through every frame and updated / rendered.</p>
+                    <p>Currently only the pointers to the entity data are allocated up-front at the start of the game and stay compact and cache warm. In the future, the entity system should allocate entity data up-front and carve out pieces of the buffer to return when a new one is allocated. When an entity dies, the portion of memory is marked free and a new entity can use the data when allocated.</p>
                 </div>
             </div>                
         </section>
@@ -604,9 +789,53 @@
     <div class="primary col-lg-12">
         <section class="about section">
             <div class="section-inner">
-                <h2 class="heading">Data-Driven Roguelike</h2>
+                <center><h2 class="heading">Data-Driven Roguelike</h2></center>
                 <div class="content">
-                    <p>This is the Mouse Playhouse project page.</p>
+                    <div style='position:relative; padding-bottom:calc(56.25% + 44px)'>
+                        <iframe src='https://gfycat.com/ifr/WeakAcceptableFlee' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0;' allowfullscreen></iframe>
+                    </div>
+                    
+                    <h3>Summary</h3>
+                    <p>Roguelikes are one of the oldest genres of RPGs - procedurally generated dungeon crawlers with a few key features:</p>
+                    <ul>
+                        <li>Permadeath (If you die, the game is over and you must restart)</li>
+                        <li>Ability to save you current game and continue when the application is reloaded</li>
+                        <li>Enemy NPCs that can be interacted with, and possibly friendly NPCs</li>
+                        <li>Items scattered across the map that can be picked up and used</li>
+                        <li>​8 points of movement, turn-based gameplay</li>
+                    </ul>
+
+                    <h3>Agent Behaviors</h3>
+                    <p>NPCs can be defined with three different behaviors:</p>
+                    <ul>
+                        <li>Melee Attack Player or Enemy NPC</li>
+                        <li>Chase Player or Enemy NPC</li>
+                        <li>Flee from Player or Enemy NPC</li>
+                    </ul>
+                    <p>NPCs can also be given movement properties that modify the hueristics in their A* pathfinding, stating whether they can move through solid tiles ("flying" movement), Lava, and whether they're blocked by other Agents (the player or other NPCs).</p>
+                    <center><img class="img-fluid inProjectImg" src="assets/images/projects/paradise/p1.png" /></center>
+                    <p class="text-center font-weight-light" >Data-driving NPC behaviors and properties</p>
+                    <p>A permissive line of sight algorithm is used for both the player and the NPCs using digital bressenham lines spanning out for each agent. NPCs derive utility of their behaviors based on the distance of enemy agents, how low their current health is, and how close they are to certain features in the map.</p>
+                    <p>NPCs can also be defined with various faction relationships, so if a goblin sees the player and another enemy faction, but hates the enemy faction more, it will go after the enemy faction instead of the player. They may also see items on the map and pick them up.</p>
+
+                    <h3>NPC Factions</h3>
+​                    <p>NPCs can belong to XML-defined factions. Factions have relationships, resulting in NPC in-fighting when they see other NPCs belonging to a "Hated" or "Disliked" faction. If an NPC likes a faction but someone belonging to that faction attacks it, it will note the attack and become hostile to that faction. </p>
+                    <img class="img-fluid inProjectImg" src="assets/images/projects/paradise/p2.png" />
+                    <p class="text-center font-weight-light" >The player attacks a Hobgoblin while other NPCs flee enemies in the distance.</p>
+
+                    <h3>Data-Driven Design</h3>
+                    <p>Entirely new in-game scenarios can be built from the ground up in a relatively short amount of time and touching only the necessary portions of the code. New generators, which must be defined code-side, are self-registering and only require using a template generator class to add themselves into the list of generators.</p>
+                    <img class="img-fluid inProjectImg" src="assets/images/projects/paradise/p3.png" />
+                    <p class="text-center font-weight-light" >Storm the Castle - A scenario with a custom castle map and custom NPC behaviors, built in a little under 5 hours</p>
+                    <p>The XML parsing portion of my engine uses a free third party tool called XMLParser, with additional functionality built in to make design as painless as possible. This means that things such as colors can be defined in multiple ways, attribute and node data capitalization doesn't matter, and ordering of nodes is not taken into account.</p>
+
+                    <h3>Taking it Two Steps Further</h3>
+                    <p>The basic requirements for the project were deep dives into agent behaviors, XML-driven gameplay and design, and a handful of interesting map generators, all controlled through keyboard input.</p>
+                    <p>There was something desperately lacking from example projects of prior students and I was determined to make mine more interesting and playable. The two things that I thought would really elevate the experience were mouse interaction and dynamic tile graphics. Debugging the A* pathing was a breeze because I could visually see the path being drawn where my mouse was located. Being able to mouse over enemies to see data about them felt good and really brought life to the game.</p>
+                    <p>Looking back, design-wise, the inventory system may not have been the best idea due to the ASCII nature of the visual interface - you may pick up five different swords that all look the same and can't tell the difference unless you mouse over them.</p>
+                    <p>Taking these extra steps really elevated the entire experience and resulted in a more well-crafted adventure. Mouse-based inventory management also felt better and made the game feel more dynamic.</p>
+                    <img class="img-fluid inProjectImg" src="assets/images/projects/paradise/p4.gif" />
+                    <p class="text-center font-weight-light" >Mouse interaction and dynamic tile animations</p>
                 </div>
             </div>                
         </section>

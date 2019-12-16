@@ -2,9 +2,47 @@
     <div class="primary col-lg-12">
         <section class="about section">
             <div class="section-inner">
-                <h2 class="heading">Multiplayer Top-Down Shooter</h2>
+                <center><h2 class="heading">Multiplayer Top-Down Shooter</h2></center>
                 <div class="content">
-                    <p>This is the Mouse Playhouse project page.</p>
+                    <center><iframe width="950" height="565" src="https://www.youtube.com/embed/JyF1jpT_35s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+                    <h3>Summary & Features</h3>
+                    <ul>
+                        ​<li>Five levels, two bosses with at least 5 minutes of changing gameplay</li>
+                        <li>Focus on optimization</li>
+                        <li>2D sprite rendering pipeline on top of custom OpenGL wrapper</li>
+                        <li>Profiling tools: memory allocations, code block execution times, and multi-threaded logging system</li>
+                        <li>4-Person Drop-In Drop-Out Multiplayer</li>
+                    </ul>
+                    <h3>Profiling Tools</h3>
+                    <div style='position:relative; padding-bottom:calc(56.25% + 44px)'>
+                        <iframe src='https://gfycat.com/ifr/UnlawfulFarflungAmazontreeboa' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0;' allowfullscreen></iframe>
+                    </div>
+                    <p class="text-center font-weight-light">The memory allocation profiler. Includes callstacks for each memory leak on program exit</p>
+                    <p>The profiling tools include three separate components:​</p>
+                    <ul>
+                        <li>Memory Allocation Profiler</li>
+                        <li>Frame Time and Function Profiler</li>
+                        <li>Logger</li>
+                    </ul>
+                    <p>The memory allocation profiler was constructed by overloading the new() and delete() operators to push metadata at the head of any allocated buffer.</p>
+                    <p>When new() is called and memory profiling output is set to verbose, the memory manager fetches the current callstack of the program and saves it at the beginning of the buffer as well as the rest of the metadata.</p>
+                    <center><img class="img-fluid inProjectImg" src="assets/images/projects/chromatica/c1.png" /></center>
+                    <p class="text-center font-weight-light" >Allocated memory buffers called with overloaded new()</p>
+                    <p>The metadata for the allocated memory buffer also contains a circular linked list to other memory allocations. This allows for a compact list of all metadata information, with the Memory Manager class only holding a pointer to the start of the linked list.</p>
+                    <img class="img-fluid inProjectImg" src="assets/images/projects/chromatica/c2.png" />
+                    <p class="text-center font-weight-light" >The memory manager metadata circular linked list</p>
+                    <p>The circular linked list was the fastest and most compact data structure to hold the collection of allocation metadata, since only the head of the list has to be stored on the memory manager and insertion is done in constant time.</p>
+
+                    <h3>Multiplayer</h3>
+                    <div style='position:relative; padding-bottom:calc(56.25% + 44px)'>
+                        <iframe src='https://gfycat.com/ifr/WelllitImpassionedDorado' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0;' allowfullscreen></iframe>
+                    </div>
+                    <p class="text-center font-weight-light" >4 players fighting the first boss</p>
+                    <p>The game features 4-person drop-in drop-out multiplayer. When an Xbox Controller is plugged in while the game is running, the player is added into the game. Players play cooperatively while also competing for the highest score, which is displayed when all players have died.</p>
+
+                    <h3>Future Features / Nice to Haves</h3>
+                    <p>The collection of entities (Enemies, players, bullets, and particles) should be compact in memory and cache warm at all times since they are looped through every frame and updated / rendered.</p>
+                    <p>Currently only the pointers to the entity data are allocated up-front at the start of the game and stay compact and cache warm. In the future, the entity system should allocate entity data up-front and carve out pieces of the buffer to return when a new one is allocated. When an entity dies, the portion of memory is marked free and a new entity can use the data when allocated.</p>
                 </div>
             </div>                
         </section>

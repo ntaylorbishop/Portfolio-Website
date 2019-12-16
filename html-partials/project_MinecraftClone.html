@@ -2,9 +2,61 @@
     <div class="primary col-lg-12">
         <section class="about section">
             <div class="section-inner">
-                <h2 class="heading">Minecraft Clone</h2>
+                <center><h2 class="heading">Minecraft Clone</h2></center>
                 <div class="content">
-                    <p>This is the Mouse Playhouse project page.</p>
+                    <div style='position:relative; padding-bottom:calc(56.25% + 44px)'>
+                        <iframe src='https://gfycat.com/ifr/GreedyThoughtfulChafer' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0;' allowfullscreen></iframe>
+                    </div>
+                    <br/>
+
+                    <h3>Features & Summary</h3>
+                    <ul>
+                        <li>Infinite, persistent world</li>
+                        <li>Perlin noise generated terrain and biomes</li>
+                        <li>Multi-threaded chunk management​​</li>
+                        <li>Rain and snow effects</li>
+                        <li>Flood fill lighting algorithm</li>
+                        <li>Physics and Audio</li>
+                    </ul>
+
+                    ​<h3>Infinite, Persistent World</h3>
+                    <div style='position:relative; padding-bottom:calc(56.25% + 44px)'>
+                        <iframe src='https://gfycat.com/ifr/KeenMilkyBumblebee' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0;' allowfullscreen></iframe>
+                    </div>
+                    <p class="text-center font-weight-light">Chunks stream in and out as you move across the landscape</p>
+                    <p>The world is broken into "chunks" - 16x16x128 block groups that stream in and out as the player moves around. At all times, the game manages these chunks in a radius around the player. When the player moves, chunks that are flushed from memory are written out to disk - this ensures that when the player comes back, anything that they built still stays around.</p>
+                    <p>Chunks are generated with their heights calculated through a seeded 2D perlin noise function - a randomized, deterministic algorithm that ensures smooth gradients across the world plane. </p>
+
+                    <h3>Biomes</h3>
+                    <p>A separately seeded 2D perlin noise function is used to determine world biomes. These perlin grids are used as temperature and humidity in combination with column height. The base perlin noise function returns values between -1 and 1, so we use 0 as our determining factor on "hot", "cold", "wet", and "dry".</p>
+                    <p>Water and ice are determined by column heights being less than an arbitrarily defined "sea level".</p>
+                    <center><img class="img-fluid inProjectImg" src="assets/images/projects/simpleminer/sm1.png" /></center>
+                    <p class="text-center font-weight-light" >Determining column biomes</p>
+
+                    <h3>Rain and Snow Effects</h3>
+                    <div style='position:relative; padding-bottom:calc(56.25% + 44px)'>
+                        <iframe src='https://gfycat.com/ifr/SingleLimpJellyfish' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0;' allowfullscreen></iframe>
+                    </div>
+                    <p class="text-center font-weight-light">Snow on top of a mountain</p>
+                    <p>If a column is marked as MOUNTAIN (It's column height exceeds a certain threshold), snow spawns in that column. If a column is marked as PLAINS (It has high humidity and temperature), rain spawns in that column.</p>
+                    <p>For each column marked as snow or rain, 4 weather "sheets" (2D oriented quads) spawn and move downwards toward the ground. Each frame, the weather sheet checks to see if it's bottom is intersecting a block, and moves back up to the top of the column.</p>
+                    <p>Clouds (3D axis-aligned rectangular prisms) are spawned randomly above snow and rain columns and move horizontally across the terrain.</p>
+
+                    <h3>Lighting</h3>
+                    <div style='position:relative; padding-bottom:calc(56.25% + 44px)'>
+                        <iframe src='https://gfycat.com/ifr/SecondhandExcitableAmethystinepython' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0;' allowfullscreen></iframe>
+                    </div>
+                    <p class="text-center font-weight-light">Block faces get darker the further down you dig</p>
+                    <p>Light propagates using internal, arbitrarily defined light values of blocks that light the faces of surrounding blocks. Every block starts with an internal light value of 1, so that if no light is coming into a concealed area, it will still remain partially visible.</p>
+                    <p>When a chunk is first generated, the terrain generator descends each column and marks each air tile as sky. It then reiterates through each column, checks surrounding horizontal neighbors, and "dirties" them if they're not air tiles. Each frame, the algorithm goes through all blocks that need their lighting recalculated and adjusts their internal lighting values to correspond correctly to their neighbors.</p>
+                    <p>Blocks only need their lighting recalculated when neighboring blocks are added or removed, ensuring that lighting is not calculated unless it needs to be.</p>
+
+                    <h3>Future Features / Nice to Haves</h3>
+                    <ul>
+                        <li>Orient weather sheets around the player instead of in the columns - more natural look than having rain next to snow</li>
+                        <li>Inventory management / "collecting" blocks</li>
+                        <li>More refined / natural-feeling physics reactions</li>
+                    </ul>
                 </div>
             </div>                
         </section>

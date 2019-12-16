@@ -2,11 +2,64 @@
     <div class="primary col-lg-12">
         <section class="about section">
             <div class="section-inner">
-                <h2 class="heading">Doctor's Note</h2>
+                <center><h2 class="heading">Doctor's Note</h2></center>
                 <div class="content">
-                    <p>This is the Mouse Playhouse project page.</p>
+                    <center><iframe width="950" height="565" src="https://www.youtube.com/embed/fMiTBRij0Ec" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center
+                    
+                    <h3>Summary</h3>
+                    <ul>
+                        <li>A mobile puzzle game built in Unity3D for Android mobile platforms</li>
+                        <li>Served as Lead Developer on a team of 4 (2 programmers)</li>
+                        <li>Responsibilities included: Managed team tasks and pipelines, implemented basic puzzle mechanics, puzzle sequencing, and end-game sequencing</li>
+                    </ul>
+
+                    <h3>Base Puzzle Mechanics</h3>
+                    <center><img class="img-fluid inProjectImg" src="assets/images/projects/doctorsnote/dn1.png" /></center>
+                    <p class="text-center font-weight-light" >The base mechanism for placing gears on pegs and spark effects</p>
+                    <p>Interaction is done with the Unity3D event trigger system. This ensures that interaction is cross-platform with no additional overhead.</p>
+                    <p>There are a set number of gears in the game that pan into view when a level is completed, and each is given its own event triggers for dragging, picking up, and putting down.</p>
+                    <p>The gear objects hold functionality for transferring rotation between nearby gears - It loops through the ~20 gears in the game, checks the distance between them, and if they're close enough initiates rotation and tells them to check for additional nearby gears. This allows a chain-reaction of sorts when gears are put in place.</p>
+                    <center><img class="img-fluid inProjectImg" src="assets/images/projects/doctorsnote/dn2.png" /></center>
+                    <p class="text-center font-weight-light" >Creating the sliding pipe mechanism</p>
+                    <p>The original prototype for the third level sliding pipe was built by asking whether there was a gear close enough to the pipe and sliding the pipe in a hard-coded direction.</p>
+                    <p>During vertical slice, we implemented a line-normal detection algorithm that takes an angle and detects the closest gear's distance to its own line segment to see if it was "touching" the teeth or not.</p>
+                    <center><img class="img-fluid inProjectImg" src="assets/images/projects/doctorsnote/dn3.png" /></center>
+                    <p class="text-center font-weight-light" >The on / off peg mechanism</p>
+                    <p>The fourth and fifth puzzles use a simple on / off peg mechanism that turns on an attached peg if a rotating pipe is in the right place. Pegs marked as "on / off" pegs check to see if they're associated pipe is at the right angle, and if it is, powers the associated regular peg.</p>
+                    <p>To sell the idea of “turning on” a peg with the power box, a simple procedural lightning particle effect was implemented along with switching the sprites of the power box.</p>
+
+                    <h3>Puzzle Sequencing</h3>
+                    <img class="img-fluid inProjectImg" src="assets/images/projects/doctorsnote/dn4.png" />
+                    <p class="text-center font-weight-light" >Creating the puzzle-to-puzzle animation sequence</p>
+                    <p>While we originally went with the idea of having various notes laid out in the background of the main game scene so that players got an idea for the general story of Doctor’s Note, it quickly came to our attention that players were not noticing the notes at all. To fix this problem, I designed and implemented a level completion animation that would fade in a theoretical shopping list to juxtapose the dark tone of the game with the “madness” of the mad scientist.</p>
+                    <p>This shopping list would fade in after the user completed a puzzle, and an animation kicked off that when finished, the player would have to hit the continue button to move to the next puzzle.</p>
+                    <img class="img-fluid inProjectImg" src="assets/images/projects/doctorsnote/dn5.png" />
+                    <p class="text-center font-weight-light" >Creating the end-game sequence</p>
+                    <p>Once development kicked off and we had our core mechanics fleshed out, we needed a way for the player to feel like they were actually building something. The designer and I came up with a scheme such that certain mechanical sounds would come to life and others would fade out while background environment pieces would begin moving as the camera panned over to the next puzzle in the game.</p>
+                    <p>For our vertical slice milestone, I set out and created the level progression sequencing and connected the artist’s animations to create a more organic progression between puzzles. This also included loading sequences from the main menu UI to the main game scene, and from the UI to the credits sequence shown above.</p>
+
+                    <h3>Post Mortem</h3>
+                    <h4>What Went Well</h4>
+                    <ul>
+                        <li>Communicated effectively with team members about desires for the game
+                        Worked well the other programmer to get things done and have both of us firing on all pistons</li>
+                        Meted out tasks effectively and kept everyone focused on the tasks that needed to be accomplished</li>
+                    </ul>
+
+                    <h4>What Went Wrong</h4>
+                    <ul>
+                        <li>Could have handled the programming workflow with the other programmer at the beginning of the project instead of half-way through</li>
+                        <li>Could have been more effective in holding people accountable for the quality of work they were giving me for submission</li>
+                        <li>Workflow between all four team members could have been handled more efficiently and elegantly</li>
+                    </ul>
+                    <h4>What I Learned</h4>
+                    <ul>
+                        <li>People have different desires for what they want out of the project and socially, and tapping into those makes them more effective developers</li>
+                        <li>Do not be afraid to dive into an unfamiliar codebase and mangle it to your needs</li>
+                        <li>Game development workflow is not a simple problem space, and how to efficiently handle it is a hard problem</li>
+                    </ul>
                 </div>
-            </div>                
+            </div>
         </section>
     </div>
 </div>
