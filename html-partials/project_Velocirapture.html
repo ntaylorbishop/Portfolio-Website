@@ -1,0 +1,44 @@
+<div class="row projectPage" id="project_Velocirapture">
+    <div class="primary col-lg-12">
+        <section class="about section">
+            <div class="section-inner">
+                <center><h2 class="heading">Velocirapture</h2></center>
+                <div class="content">
+                    <center><iframe width="950" height="565" src="https://www.youtube.com/embed/Xy-sFMnk4GU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+
+                    <br />
+                    <h3>Features</h3>
+                    <ul>
+                        <li>4v4 LAN multiplayer (WiFi or Ethernet)</li>
+                        <li>Two game modes: CTF and Bounty</li>
+                        <li>Two guns</li>
+                        <li>Dynamic, animated HUD</li>
+                        <li>Ragdoll death effect</li>
+                    </ul>
+
+                    <h3>Cryo Gun</h3>
+                    <img class="img-fluid inProjectImg" src="assets/images/projects/velocirapture/v1.gif" />
+                    <img class="img-fluid inProjectImg" src="assets/images/projects/velocirapture/v2.gif" />
+                    <br/>
+                    <p>The Cryo Gun features two firing modes. The primary firing mode is an automatic machine-gun like mode, then switches to a slower rate of fire when the ammo count reaches 1. The secondary firing mode is a lobby grenade that explodes into smoke clouds when making impact with a surface or player.</p>
+                    <p>The primary firing mode raycasts forward from the camera's location, randomized slightly in a small cone. The ammo check is done every time the gun fires, and when it reaches 1 the firing mode switches the cooldown timer to be slower.</p>
+                    <img class="img-fluid inProjectImg" src="assets/images/projects/velocirapture/v3.png" />
+                    <p class="text-center font-weight-light" >Cryo Gun Primary Projectile Blueprint</p>
+                    <p>The primary projectile spawns the raycast and particle effect from the server. The player's controller blueprint needs to replicate rotation over the server, or else the projectile blueprints ​won't know where to fire from.</p>
+
+                    <h3>The HUD</h3>
+                    <div style='position:relative; padding-bottom:calc(56.25% + 44px)'>
+                        <iframe src='https://gfycat.com/ifr/ShamelessHalfAntelope' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0;' allowfullscreen></iframe>
+                    </div><p>
+                    <p class="text-center font-weight-light" >HUD Animations play for a variety of events</p>
+                    <p>After the first iteration of the HUD, our team decided to incorporate external feedback that HUD elements looked too bland and unresponsive. It featured no player feedback and didn't feel good when picking up items. It was my responsibility to streamline and liven up the HUD.</p>
+                    <p>HUD animations are done using <b>UMG animations</b>, triggered through gameplay events. UMG and <b>Player Controller</b> blueprints are not replicated over the network so gameplay events must be fired through the <b>Game Mode</b> blueprint.</p>
+                    <img class="img-fluid inProjectImg" src="assets/images/projects/velocirapture/v4.png" />
+                    <p class="text-center font-weight-light" >Working With UMG Animations</p>
+                    <p>Events were fired from the Game Mode blueprint that pickups were grabbed, so the HUD element didn't have to poll for changes. This ensured that the HUD remained responsive and only encapsulated functionality to play the animations.</p>
+                    <h3>Ragdolling</h3>
+                </div>
+            </div>                
+        </section>
+    </div>
+</div>

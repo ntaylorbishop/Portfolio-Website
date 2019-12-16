@@ -20,7 +20,7 @@ jQuery(document).ready(function($) {
     CollectProjectLinksAndAttachClickHandlers();
     HideAllProjectPages();
 
-    projectsSection.hide();
+    //projectsSection.hide();
     fillContainer.hide();
     
     $("#aboutMeLink").click(function(e) {

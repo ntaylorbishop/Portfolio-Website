@@ -54,31 +54,7 @@
         </div>
     </header>
 
-    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mx-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#!" id="homeLink">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#!" id="aboutMeLink">About Me</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#!" id="projectsLink">Projects</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#" id="workExpLink">Work Experience</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#" id="eduLink">Education</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+    @@include('navbar.html')
 
     <div class="container sections-wrapper">
         <!-- <div class="row" id="aboutme">
@@ -100,11 +76,16 @@
 
         @@include('aboutMeSection.html')
     
-        @@include('projectsSection.html')
+        <!-- @@include('projectsSection.html') -->
 
         <!--INDIVIDUAL PROJECT PAGES -->
-        @@include('project_mousePlayhouse.html')
         @@include('project_MastersThesis.html')
+
+        @@include('project_Velocirapture.html')
+        @@include('project_DoctorsNote.html')
+        @@include('project_MinecraftClone.html')
+        @@include('project_Chromatica.html')
+        @@include('project_Roguelike.html')
 
         <!-- INDIVIDUAL PROJECT PAGES -->
         <!-- <div class="row" id="project-MastersThesis">

@@ -55,30 +55,69 @@
     </header>
 
     <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mx-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#!" id="homeLink">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#!" id="aboutMeLink">About Me</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#!" id="projectsLink">Projects</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#" id="workExpLink">Work Experience</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#" id="eduLink">Education</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mx-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#!" id="homeLink">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#!" id="aboutMeLink">About Me</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Professional & Graduate Work
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">Penn & Teller VR</a>
+                  <a class="dropdown-item" href="#">Mouse Playhouse</a>
+                  <a class="dropdown-item" href="#">Master's Thesis: An Exploration in Rendering Pipelines</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Personal Projects
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">Velocirapture</a>
+                  <a class="dropdown-item" href="#">Doctor's Note</a>
+                  <a class="dropdown-item" href="#">Minecraft Clone</a>
+                  <a class="dropdown-item" href="#">FBX Importer</a>
+                  <a class="dropdown-item" href="#">Multiplayer Top-Down Shooter</a>
+                  <a class="dropdown-item" href="#">Data-Driven Roguelike</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#!" id="workExpLink">Work Experience</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#!" id="eduLink">Education</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#!" id="resumeLink">Resume</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+
+
+
+<!-- <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Dropdown
+    </a>
+    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+      <a class="dropdown-item" href="#">Action</a>
+      <a class="dropdown-item" href="#">Another action</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" href="#">Something else here</a>
+    </div>
+  </li> -->
 
     <div class="container sections-wrapper">
         <!-- <div class="row" id="aboutme">
@@ -212,12 +251,12 @@
         </aside>--> 
       
     </div>    
-</div>
-    
-        <div class="row page" id="projects">
+
+    <div class="row page" id="proProjects">
     <div class="primary col-lg-12">
         <section class="about section">
             <div class="section-inner">
+                <h2 class="heading">Professional & Graduate Work</h2>
                 <div class="item row">
                     <a class="col-md-4 col-12" href="https://www.gearboxpublishing.com/game/pntvr/" target="_blank">
                         <img class="img-fluid project-image" src="assets/images/projects/PennTellerVR.jpg" alt="Penn & Teller VR" />
@@ -240,16 +279,6 @@
                     </div>                        
                 </div>
 
-                <!-- <div class="item row">
-                    <a class="col-md-4 col-12 projectLink" href="#!" data-projectSectionName="project_MousePlayhouse">
-                        <img class="img-fluid project-image" src="assets/images/projects/MousePlayhouse.jpg" alt="project name" />
-                    </a>
-                    <div class="desc col-md-8 col-12">
-                        <h3 class="title"><a class="projectLink" href="#!" data-projectSectionName="project_MousePlayhouse">Mouse Playhouse</a></h3>
-                        <p class="mb-2">Mouse Playhouse is a virtual reality video game lauded as the Guildhall at SMU's best senior design team project to date. Mouse Playhouse won 2nd place in the Intel University Games Showcase, as well as getting our development team hired by Gearbox Software.</p>
-                    </div>                        
-                </div> -->
-
                 <hr class="divider" />
 
                 <div class="item row">
@@ -267,19 +296,82 @@
     </div>
 </div>
 
-        <!--INDIVIDUAL PROJECT PAGES -->
-        <div class="row projectPage" id="project_MousePlayhouse">
-    <div class="primary col-lg-12">
-        <section class="about section">
-            <div class="section-inner">
-                <h2 class="heading">Mouse Playhouse</h2>
-                <div class="content">
-                    <p>This is the Mouse Playhouse project page.</p>
-                </div>
-            </div>                
-        </section>
+<div class="row page" id="personalProjects">
+        <div class="primary col-lg-12">
+            <section class="about section">
+                <div class="section-inner">
+                    <h2 class="heading">Personal Projects</h2>
+                    <!-- Velocirapture -->
+                    <div class="item row">
+                        <a class="col-md-4 col-12 projectLink" href="#!" data-projectSectionName="project_Velocirapture">
+                            <img class="img-fluid project-image" src="assets/images/projects/Velocirapture2.png" alt="Velocirapture" />
+                        </a>
+                        <div class="desc col-md-8 col-12">
+                            <h3 class="title"><a class="projectLink" href="#!" data-projectSectionName="project_Velocirapture">Velocirapture</a></h3>
+                            <p class="mb-2">A 4v4 local multiplayer first-person shooter created in Unreal 4 in grad school over the course of 5 months. I served as Lead Programmer on a team of 8 developers.</p>
+                        </div>                        
+                    </div>
+    
+                    <hr class="divider" />
+    
+                    <!-- Doctor's Note -->
+                    <div class="item row">
+                        <a class="col-md-4 col-12 projectLink" href="#!" data-projectSectionName="project_DoctorsNote">
+                            <img class="img-fluid project-image" src="assets/images/projects/DoctorsNote.jpg" alt="Doctor's Note" />
+                        </a>
+                        <div class="desc col-md-8 col-12">
+                            <h3 class="title"><a class="projectLink" href="#!" data-projectSectionName="project_DoctorsNote">Doctor's Note</a></h3>
+                            <p class="mb-2">A puzzle game built in Unity3D for Android mobile platforms in grad school. I served as Lead Developer on a team of 4.</p>
+                        </div>                        
+                    </div>
+    
+                    <hr class="divider" />
+    
+                    <!-- Minecraft Clone-->
+                    <div class="item row">
+                        <a class="col-md-4 col-12 projectLink" href="#!" data-projectSectionName="project_MinecraftClone">
+                            <img class="img-fluid project-image" src="assets/images/projects/MinecraftClone.jpg" alt="Minecraft Clone" />
+                        </a>
+                        <div class="desc col-md-8 col-12">
+                            <h3 class="title"><a class="projectLink" href="#!" data-projectSectionName="project_MinecraftClone">Minecraft Clone</a></h3>
+                            <p class="mb-2">A clone of the game Minecraft written from scratch in C++ and OpenGL. Features an infinite, procedurally generated world, as well rudimentary physics, block lighting, and weather biomes.</p>
+                        </div>                        
+                    </div>
+
+                    <hr class="divider" />
+    
+                    <!-- Multiplayer Top-Down Shooter -->
+                    <div class="item row">
+                        <a class="col-md-4 col-12 projectLink" href="#!" data-projectSectionName="project_Chromatica">
+                            <img class="img-fluid project-image" src="assets/images/projects/Chromatica.png" alt="Multiplayer Top-Down Shooter" />
+                        </a>
+                        <div class="desc col-md-8 col-12">
+                            <h3 class="title"><a class="projectLink" href="#!" data-projectSectionName="project_Chromatica">Multiplayer Top-Down Shooter</a></h3>
+                            <p class="mb-2">A 4-player top-down shooter written from scratch in C++ and OpenGL. Written mainly to test a custom, comprehensive performance profiling tool.</p>
+                        </div>                        
+                    </div>
+
+                    <hr class="divider" />
+    
+                    <!-- Data-Driven Roguelike -->
+                    <div class="item row">
+                        <a class="col-md-4 col-12 projectLink" href="#!" data-projectSectionName="project_Roguelike">
+                            <img class="img-fluid project-image" src="assets/images/projects/Roguelike.png" alt="Data-Driven Roguelike" />
+                        </a>
+                        <div class="desc col-md-8 col-12">
+                            <h3 class="title"><a class="projectLink" href="#!" data-projectSectionName="project_Roguelike">Data-Driven Roguelike</a></h3>
+                            <p class="mb-2">A 2D roguelike written in C++. Completely data-driven, the game features the ability to change all manner of monsters, items, maps, and the procedural generation tool.</p>
+                        </div>                        
+                    </div>
+                </div>                
+            </section>
+        </div>
     </div>
 </div>
+    
+        
+
+        <!--INDIVIDUAL PROJECT PAGES -->
         <div class="row projectPage" id="project_MastersThesis">
     <div class="primary col-lg-12">
         <section class="about section">
@@ -290,6 +382,7 @@
                         <iframe src='https://gfycat.com/ifr/CornyWarmheartedBarbet' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0;' allowfullscreen></iframe>
                     </div>
                     <br/>
+
                     <h3>Summary</h3>
                     <ul>
                         <li><a href="https://github.com/ntaylorbishop/Masters-Thesis">Link to project GitHub repo</a></li>
@@ -302,6 +395,7 @@
                         <li>High Dynamic Range (HDR​)</li>
                         <li>Real-time reflections</li>
                     </ul>
+
                     <h3>Tiled Forward+ Rendering</h3>
                     <ol>
                         <li>The tiled forward renderer consists of the following steps:</li>
@@ -319,8 +413,200 @@
                     </div>
                     <p class="text-center font-weight-light">The artifact can support up to 4096 lights at 60 FPS on a mid-to-high range gaming laptop.</p>
                 
-                    <h3>Profiling Results</h3>
+                    <h4>Profiling Results</h4>
                     <p>The artifact was profiled with a traditional forward pipeline, the implemented tiled forward approach, with and without a pre-depth pass, and light sizes of 1-2 meters and 3-6 meters. The two most relevant results are pictured below, to demonstrate the massive decrease in rendering times with a forward+ pipeline.</p>
+                    <img class="img-fluid inProjectImg" src="assets/images/projects/thesis/mt2.png" />
+                    <p class="text-center font-weight-light">Frame time results with traditional forward rendering.</p>
+                    <img class="img-fluid inProjectImg" src="assets/images/projects/thesis/mt3.png" />
+                    <p class="text-center font-weight-light">Frame time results with tiled forward rendering. Note that the CPU must wait on the light culling compute shader to finish.</p>
+                    <h3>Omni-directional Shadow Mapping</h3>
+                    <div style='position:relative; padding-bottom:calc(56.25% + 44px)'>
+                        <iframe src='https://gfycat.com/ifr/OrganicGlossyGrayling' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0;' allowfullscreen></iframe>
+                    </div>
+                    <p class="text-center font-weight-light">Demonstrating the real-time shadowmap</p>
+                    <p>The shadow map is constructed by first creating 6 camera frustums at 90 degree angles at the point where the shadows should be cast. The scene is then rendered 6 times with depth only, amortized to once per frame, to each side of a depth cubemap. During the base pass, if a material is defined to receive shadows, each fragment projects its position to the point light's position and normalizes it to the [0, 1] range so it can sample into the depth cubemap. If it is further from the light than the point sampled in the cubemap, it is determined to be in shadow.</p>
+                    <p>Naive sampling of the cubemap can lead to egregious artifacts in the rendered scene. The three most obvious are shadow acne, peter panning, and perspective / projective aliasing.</p>
+
+                    <h4>Shadow Acne</h4>
+                    <img class="img-fluid inProjectImg" src="assets/images/projects/thesis/mt4.png" />
+                    <p class="text-center font-weight-light">An example of shadow acne in the scene</p>
+                    <p>Shadow acne is due to the texel density mismatch between the shadowmap and the material being rendered. The shadowmap is typically much smaller than whatever material is currently being sampled, so stair-stepping happens as the material samples into the shadowmap. Shadow acne can be fixed by subtracting a very small epsilon value when sampling into the depth map.</p>
+
+                    <h4>Peter Panning</h4>
+                    <p>Peter panning occurs due to the epsilon value that is subtracted when sampling into the shadowmap. This makes the angle that's being sampled shallower, and can "pull" shadows off of thin geometry, making them look like they're floating.</p>
+                    <img class="img-fluid inProjectImg" src="assets/images/projects/thesis/mt5.png" />
+                    <p class="text-center font-weight-light">An example of peter panning in the scene</p>
+                    <p>While peter panning cannot be entirely alleviated using this shadowmapping technique, it can be mostly mitigated by ensuring that the epsilon value is sufficiently small.</p>
+
+                    <h4>Perspective and Projective Aliasing</h4>
+                    <p>Perspective aliasing occurs because the ratio because of the texel density mismatch between the shadowmap and the surface being rendered.</p>
+                    <img class="img-fluid inProjectImg" src="assets/images/projects/thesis/mt6.png" />
+                    <p class="text-center font-weight-light">An example of perspective aliasing in the scene</p>
+                    <p>One approach to alleviating perspective aliasing is by using percentage closer filtering of the shadowmap, which ups the number of samples taken per-pixel rendered on a surface but dramatically improves the perspective aliasing as seen above. To do percentage closer filtering, a sampling disk is constructed around the point being sampled and scaled by the distance of the fragment to the camera, so that shadows closer to the viewer are softer and computation time is not spent softening those further away. Once the sampling disk is constructed and samples have been taken from the shadowmap their values are then summed up and divided by the number of samples to yield a "percent-in-shadow" value, which is then used to multiply into the Lambertian diffuse and Blinn-Phong specular component of the shadow casting light.</p>
+                    <img class="img-fluid inProjectImg" src="assets/images/projects/thesis/mt7.png" />
+                    <p class="text-center font-weight-light">An example of projective aliasing in the scene</p>
+                    <p>Projective aliasing occurs as the tangent plane of the geometry becomes parallel to the shadow casting light's direction. It can be alleviated somewhat by using the percentage closer filtering technique as described above, but cannot be entirely alleviated with this technique.</p>
+                    
+                    <h3>Screen-space Ambient Occlusion</h3>
+                    <p>Screen-space ambient occlusion (SSAO) is a technique to approximate ambient occlusion between geometry in real-time. The technique used here is based on a hemispherical based sampling approach originally developed by Crytek.</p>
+                    <img class="img-fluid inProjectImg" src="assets/images/projects/thesis/mt8.png" />
+                    <p class="text-center font-weight-light">An example of ambient occlusion</p>
+                    <p>This specific approach to SSAO consists of a full screen pass before the base lighting pass and after the pre-depth pass, that uses both the depth buffer and a map of the scene normals in view-space that is rendered out with the pre-depth pass. Each fragment sampled uses a constructed sampling hemisphere oriented the normal sampled from the scene normals map. For each point in the sampling hemisphere, a depth value is sampled from the depth buffer for occlusion - the amount of occluded samples in the depth buffer divided by the number of samples taken becomes the AO factor that is written into the SSAO buffer.</p>
+                    <img class="img-fluid inProjectImg" src="assets/images/projects/thesis/mt9.png" />
+                    <p class="text-center font-weight-light">The unblurred SSAO buffer</p>
+                    <p>The sampling hemisphere used must be rotated for every other pixel in the SSAO buffer for two reasons. First, if the same sampling hemisphere is not used across each pixel, then it must be reconstructed for every pixel in the buffer which can add a significant amount of time to the SSAO pass. Second, if the sampling hemisphere is not rotated, it creates artifacting that does not resemble AO.</p>
+                    <p>After rotating the sampling hemisphere for every other pixel, the resultant buffer appears grainy and it shows in the final rendered scene. To account for this graininess, a depth-sensitive blur pass is run on the SSAO buffer.</p>
+                    <img class="img-fluid inProjectImg" src="assets/images/projects/thesis/mt10.png" />
+                    <p class="text-center font-weight-light">The unblurred SSAO buffer</p>
+                    <img class="img-fluid inProjectImg" src="assets/images/projects/thesis/mt11.png" />
+                    <p class="text-center font-weight-light">The blurred SSAO buffer</p>
+
+                    <h3>Order-Independent Transparency</h3>
+                    <p>This approach to order-independent transparency (OIT) is based on Morgan McGuire's approach, Weighted Blended Order-Independent Transparency. The motivation behind OIT lies in the non-commutative property of the alpha blending operation:</p>
+                    <img class="img-fluid inProjectImg" src="assets/images/projects/thesis/mt12.png" />
+                    <p class="text-center font-weight-light">The alpha blending operation</p>
+                    <p>If meshes are non-intersecting, a simple back-to-front sorting of meshes with transparency can be done to ensure correct rendering of the materials. The problem lies in intersecting geometry.</p>
+                    <img class="img-fluid inProjectImg" src="assets/images/projects/thesis/mt13.png" />
+                    <p class="text-center font-weight-light">Which mesh do we render first?</p>
+                    <p>Because the alpha blending operator is non-commutative, an order-indepent approach to transparency must be employed at the pixel-level. To do this, a separate transparency pass is used utilizing two separate render buffers - a revealage buffer which stores pre-multiplied alpha values and an accumulation buffer that stores color values multiplied by the source alpha of incoming fragments.</p>
+                    <div style='position:relative; padding-bottom:calc(56.25% + 44px)'>
+                        <iframe src='https://gfycat.com/ifr/MelodicInsidiousCattle' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0;' allowfullscreen></iframe>
+                    </div>
+                    <p class="text-center font-weight-light">An example of the revealage and accumulation buffers</p>
+
+                    <p>Incoming fragments are weighted by a function that is dependent on distance from camera to allow closer fragments to appear in front of further-away fragments, thus making the operation order-independent.</p>
+                    
+                    <h3>High-Dynamic Range Lighting</h3>
+                    <p>High-dynamic-range (HDR) rendering is an attempt to simulate two separate phenomena: the ability of the human eye to perceive detail in a large lighting range within the same area, and its ability to adapt to large light changes between areas. It is a pipeline change that affects every stage of the rendering process.</p>
+                    <p>The first step is to convert to a 16-bit-per-channel color target for scene color. Lighting calculations are done unbounded when objects are rendered, then a post-pass is done on the scene color target to map those color values back down to a 0-1 range. </p>
+                    
+                    <h4>Tonemapping Operator</h4>
+                    <p>The tonemapping operator chosen was taken from John Hable's GDC talk on Uncharted 2's filmic tonemapping. Filmic tonemapping was chosen due to its preservation of the saturation and range in color over something like Reinhardt tonemapping. Below is a screenshot taken from the artifact using no tonemapping, simple Reinhardt tonemapping, and filmic tonemapping.</p>
+                    <img class="img-fluid inProjectImg" src="assets/images/projects/thesis/mt14.png" />
+                    <p class="text-center font-weight-light">No tonemapping applied to the scene</p>
+                    <img class="img-fluid inProjectImg" src="assets/images/projects/thesis/mt15.png" />
+                    <p class="text-center font-weight-light">Reinhardt tonemapping applied to the scene</p>
+                    <img class="img-fluid inProjectImg" src="assets/images/projects/thesis/mt16.png" />
+                    <p class="text-center font-weight-light">Filmic tonemapping applied to the scene</p>
+                    <p>Note that filmic tonemapping keeps the saturation and highlights of the scene, without overly darkening it or desaturating it.</p>
+
+                    <h4>Auto-Eye Adaption</h4>
+                    <p>Auto-eye adaption is a phenomenon most notable when going from an indoor environment to an outdoor one or vice-versa. The outdoor area may seem blown out and extremely bright when viewing it through a doorway, but those values soon dim down and everything comes into view as the character steps outside. There are many techniques to accomplish this effect, and the one chosen for this thesis was auto-exposure volumes.</p>
+                    <p>When the player enters an exposure volume, the current exposure is interpolated to the target exposure. If the player is not in an exposure volume, the default exposure level specified for the scene is used.</p>
+                    <div style='position:relative; padding-bottom:calc(56.25% + 44px)'>
+                        <iframe src='https://gfycat.com/ifr/ArtisticSoreGiraffe' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0;' allowfullscreen></iframe>
+                    </div>
+                    <p class="text-center font-weight-light">An example of auto-eye adaption in the scene</p>
+
+                    <h3>Dynamic Environment Mapping</h3>
+                    <p>Dynamic environment mapping was a small portion of the thesis, designed to understand the process of rendering the scene multiple times for a variety of different reasons (shadows, pre-depth, etc). The technique itself simply involves writing to a cubemap color target, amortized out to one side per frame.</p>
+                
+                    <h3>Thesis Paper</h3>
+                    <p>Below is the thesis paper submitted to obtain a master's degree in Interactive Technology at the Guildhall at Southern Methodist University.</p>
+                    <div style='position:relative; padding-bottom:calc(56.25% + 44px)'>
+                        <iframe src='https://onedrive.live.com/embed?cid=9974E34CEDE3A5BF&resid=9974E34CEDE3A5BF%21177&authkey=AD6smwI_FhOWswE&em=2' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0;' allowfullscreen></iframe>
+                    </div>
+
+                    <br/>
+                    <h3>Thesis Defense Presentation</h3>
+                    <p>Below is the presentation for the defense of the thesis.</p>
+
+                    <div style='position:relative; padding-bottom:calc(56.25% + 44px)'>
+                        <iframe src='https://onedrive.live.com/embed?cid=9974E34CEDE3A5BF&resid=9974E34CEDE3A5BF%21178&authkey=AEroEp3GMue8qyQ&em=2&wdAr=1.7777777777777777' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0;' allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>                
+        </section>
+    </div>
+</div>
+
+        <div class="row projectPage" id="project_Velocirapture">
+    <div class="primary col-lg-12">
+        <section class="about section">
+            <div class="section-inner">
+                <center><h2 class="heading">Velocirapture</h2></center>
+                <div class="content">
+                    <center><iframe width="950" height="565" src="https://www.youtube.com/embed/Xy-sFMnk4GU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+
+                    <br />
+                    <h3>Features</h3>
+                    <ul>
+                        <li>4v4 LAN multiplayer (WiFi or Ethernet)</li>
+                        <li>Two game modes: CTF and Bounty</li>
+                        <li>Two guns</li>
+                        <li>Dynamic, animated HUD</li>
+                        <li>Ragdoll death effect</li>
+                    </ul>
+
+                    <h3>Cryo Gun</h3>
+                    <img class="img-fluid inProjectImg" src="assets/images/projects/velocirapture/v1.gif" />
+                    <img class="img-fluid inProjectImg" src="assets/images/projects/velocirapture/v2.gif" />
+                    <br/>
+                    <p>The Cryo Gun features two firing modes. The primary firing mode is an automatic machine-gun like mode, then switches to a slower rate of fire when the ammo count reaches 1. The secondary firing mode is a lobby grenade that explodes into smoke clouds when making impact with a surface or player.</p>
+                    <p>The primary firing mode raycasts forward from the camera's location, randomized slightly in a small cone. The ammo check is done every time the gun fires, and when it reaches 1 the firing mode switches the cooldown timer to be slower.</p>
+                    <img class="img-fluid inProjectImg" src="assets/images/projects/velocirapture/v3.png" />
+                    <p class="text-center font-weight-light" >Cryo Gun Primary Projectile Blueprint</p>
+                    <p>The primary projectile spawns the raycast and particle effect from the server. The player's controller blueprint needs to replicate rotation over the server, or else the projectile blueprints ​won't know where to fire from.</p>
+
+                    <h3>The HUD</h3>
+                    <div style='position:relative; padding-bottom:calc(56.25% + 44px)'>
+                        <iframe src='https://gfycat.com/ifr/ShamelessHalfAntelope' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0;' allowfullscreen></iframe>
+                    </div><p>
+                    <p class="text-center font-weight-light" >HUD Animations play for a variety of events</p>
+                    <p>After the first iteration of the HUD, our team decided to incorporate external feedback that HUD elements looked too bland and unresponsive. It featured no player feedback and didn't feel good when picking up items. It was my responsibility to streamline and liven up the HUD.</p>
+                    <p>HUD animations are done using <b>UMG animations</b>, triggered through gameplay events. UMG and <b>Player Controller</b> blueprints are not replicated over the network so gameplay events must be fired through the <b>Game Mode</b> blueprint.</p>
+                    <img class="img-fluid inProjectImg" src="assets/images/projects/velocirapture/v4.png" />
+                    <p class="text-center font-weight-light" >Working With UMG Animations</p>
+                    <p>Events were fired from the Game Mode blueprint that pickups were grabbed, so the HUD element didn't have to poll for changes. This ensured that the HUD remained responsive and only encapsulated functionality to play the animations.</p>
+                    <h3>Ragdolling</h3>
+                </div>
+            </div>                
+        </section>
+    </div>
+</div>
+        <div class="row projectPage" id="project_DoctorsNote">
+    <div class="primary col-lg-12">
+        <section class="about section">
+            <div class="section-inner">
+                <h2 class="heading">Doctor's Note</h2>
+                <div class="content">
+                    <p>This is the Mouse Playhouse project page.</p>
+                </div>
+            </div>                
+        </section>
+    </div>
+</div>
+        <div class="row projectPage" id="project_MinecraftClone">
+    <div class="primary col-lg-12">
+        <section class="about section">
+            <div class="section-inner">
+                <h2 class="heading">Minecraft Clone</h2>
+                <div class="content">
+                    <p>This is the Mouse Playhouse project page.</p>
+                </div>
+            </div>                
+        </section>
+    </div>
+</div>
+        <div class="row projectPage" id="project_Chromatica">
+    <div class="primary col-lg-12">
+        <section class="about section">
+            <div class="section-inner">
+                <h2 class="heading">Multiplayer Top-Down Shooter</h2>
+                <div class="content">
+                    <p>This is the Mouse Playhouse project page.</p>
+                </div>
+            </div>                
+        </section>
+    </div>
+</div>
+        <div class="row projectPage" id="project_Roguelike">
+    <div class="primary col-lg-12">
+        <section class="about section">
+            <div class="section-inner">
+                <h2 class="heading">Data-Driven Roguelike</h2>
+                <div class="content">
+                    <p>This is the Mouse Playhouse project page.</p>
                 </div>
             </div>                
         </section>
